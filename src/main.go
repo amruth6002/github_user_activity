@@ -32,7 +32,7 @@ var rootcmd=&cobra.Command{
 		defer resp.Body.Close()
 
 		if resp.StatusCode!=http.StatusOK{
-			fmt.Println("failed to fetch activity for\"%s\".HTTP status:%s\n",username,resp.Status)
+			fmt.Printf("failed to fetch activity for \"%s\". HTTP status: %s\n", username, resp.Status)
 			os.Exit(1)
 		}
 		body,err:=io.ReadAll(resp.Body)
